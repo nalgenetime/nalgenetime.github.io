@@ -133,6 +133,8 @@
             successResponse(type, data);
           },
           error: function(data) {
+            hideElement('#loadercard');
+            type === 'getSignIn' ? showElement('#signincard') : showElement('#repocard');
             frontThrowAlert(
               [data.status, ' : ', data.responseJSON.message].join(''),
               'Please try again later',
