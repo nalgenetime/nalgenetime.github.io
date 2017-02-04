@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.1/css/bulma.css" integrity="sha256-E3NFAdoEdCZvMUGANNJ8cM/gRzIO+9Tx9QGCCzYHquw=" crossorigin="anonymous" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://dl.frontapp.com/libs/frontjs.min.js"></script>
+    <script type="text/javascript" src="./script.js"></script>
+  </head>
+  <body>
+    <div id="main" class="container is-fluid">
+        <div class="columns">
+          <div class="column is-half is-offset-one-quarter">
+            <div class="card" id="loadercard">
+                <div class="card-content">
+                  <div class="loader">Loading...</div>
+              </div>
+            </div>
+            <div id="repocard" class="card">
+            <header class="card-header">
+              <p class="card-header-title">
+              Post Issues to GitHub
+              </p>
+            </header>
+              <div class="card-content">
+              <form id="repoform">
+                <label class="label">Select Repo</label>
+                <p class="control has-addons">
+                  <span class="select is-small">
+                    <select id="repocontainer" required >
+                      <option>Choose a Repo</option>
+                    </select>
+                  </span>
+                </p>
+                <div id="issuesTab" class="tabs is-centered">
+                  <ul>
+                    <li class="is-active" data-tab-type="postRepo"><a>Create Issue</a></li>
+                    <li data-tab-type="viewRepo"><a>View Issues</a></li>
+                  </ul>
+                </div>
+                    <div id="postRepo">
+                      <label class="label">Issue Title</label>
+                      <p class="control">
+                       <input id="repoformtitle" class="input" type="text" name="issuename" value="" required>
+                      </p>
+                      <label class="label">Issue Body</label>
+                      <p class="control">
+                        <textarea id="repoformdescrip" maxlength="2000" class="textarea" form="repoform" name="description" value="" required ></textarea>
+                      </p>
+                      <p class="control">
+                      <label class="checkbox">
+                        <input id="convoGrab" type="checkbox">
+                        Attach Conversation
+                      </label>
+                      </p>
+                      <p class="control">
+                        <label class="checkbox">
+                          <input id="replyToConvo" type="checkbox">
+                           Compose Response Email
+                        </label>
+                      </p>
+                      <p class="control has-addons">
+                        <span class="select is-small">
+                          <select id="assigneeContainer">
+                          </select>
+                        </span>
+                      </p>
+                      <p class="control">
+                        <input class="button is-medium is-success" type="submit" value="Submit">
+                      </p>
+                  </div>
+                  <div id="viewRepo">
+                    <nav class="panel">
+                      <p class="panel-heading">
+                        Click an Issue to View
+                      </p>
+                      <div class="panel-block">
+                      </div>
+                      <div id="issuesList">
+                      </div>
+                    </nav>
+                  </div>
+              </form>
+              </div>
+            </div>
+            <div id="signincard" class="card">
+              <header class="card-header">
+                <p class="card-header-title">
+                  <span class="icon">
+                  <i class="fa fa-github"></i>
+                  </span>
+                  Sign In
+                </p>
+              </header>
+              <div class="card-content">
+                <form id="signin">
+                <label class="label">User Name</label>
+                <p class="control">
+                  <input class="input" type="text" name="username" value="" >
+                </p>
+                <label class="label">Personal Token</label>
+                <p class="control">
+                  <input class="input" type="password" name="token" value="" >
+                </p>
+                <p class="control">
+                  <input class="button is-medium is-success" type="submit" value="Submit">
+                </p>
+                </form>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
