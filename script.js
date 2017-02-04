@@ -186,7 +186,7 @@
           resetForm('#repoform');
           break;
         default:
-          console.log('catch');
+          console.log('null');
       }
     };
 
